@@ -1,0 +1,107 @@
+ 
+REACT ASSIGNMENT1
+
+1.Install NodeJs, Visual studio code 
+
+2.create a Welcome component  to greet the user using a javascript function, 
+
+with a property called as name. Apply some css styling.Use the component in App  component. 
+
+
+import Welcome from './Assignment1';
+
+function App() {
+  const style = {
+
+  }
+  return (
+    <div className="App">
+      <Welcome style={style} name="Denison"/>
+      
+
+    </div>
+  );
+}
+
+export default App;
+
+----------------
+export default function Welcome(props){
+    return(
+        <div style={props.style}>
+            <h1>Welcome, {props.name}</h1>
+        </div>
+    );
+}
+
+3.Create a Component to add two numbers. 
+
+import { Component } from "react/cjs/react.development";
+
+export default class AddTwoNumbers extends Component{
+    constructor(props){
+        super(props);
+        this.state = { firstNumber : 4, secondNumber : 6};
+    }
+    render(){
+        return(
+            <div>
+                <p> Adding First and Second Number  = { this.state.firstNumber + this.state.secondNumber }</p>
+            </div>
+        );
+    }
+}
+
+
+4.Modify the card component to add a props age and perform the validation,to check it’s a number. 
+
+CARD
+
+import { Component } from "react/cjs/react.development";
+import PropTypes from 'prop-types';
+
+export default class Card extends Component{
+    constructor(props){
+        super(props);
+    }
+    render(){
+        return(
+            <div>
+                <h1> Hi I'm { this.props.firstName + ' ' + this.props.lastName } and I'm { this.props.age } years old. </h1>
+            </div>
+        );
+    }
+}  
+  Card.propTypes = {
+        firstName: PropTypes.string.isRequired,
+        age : PropTypes.number
+    }
+
+----------------------------------------------------------------
+import Card from './Card';
+
+function App() {
+  const style = {
+
+  }
+  return (
+    <div className="App">
+      
+      <Card firstName='Denison' lastName = 'Cruz'  age= '22'/>
+
+    </div>
+  );
+}
+
+export default App;
+
+
+
+5.What is Virtual DOM in ReactJS 
+
+Virtual Dom is representation of User interface that stored in the memory, it used to enhance the performance and to detect
+state and props.
+
+ 
+
+ 
